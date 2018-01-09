@@ -24,6 +24,7 @@ module.exports = function() {
 					'code': self.error.KEYWORD_DUPLICATE,
 					'msg': 'key already existed: ' + key
 				});
+				return;
 			}
 		}
 		self.map_keyword_to_response[key] = res;
@@ -32,20 +33,21 @@ module.exports = function() {
 	};
 
 	this.removeKeyword = (key, res, callback) => {
-		if(! key in self.map_keyword_to_response) {
+		if(!(key in self.map_keyword_to_response)) {
 			if(callback) {
 				callback({
 					'code': self.error.KEYWORD_NOT_FOUND,
 					'msg': 'key not found: ' + key
 				});
 			}
+			return;
 		}
 		delete self.map_keyword_to_response[key];
 		if(callback)
 			callback(null);
 	};
 
-	this.debugPrint = (callback) => {
+	this.getMapping = (callback) => {
 		if(callback)
 			callback(null, self.map_keyword_to_response);
 	};
