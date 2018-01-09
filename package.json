@@ -1,0 +1,14 @@
+{
+	"name": "KeywordBotInterface",
+	"version": "1.0.0",
+	"description": "A keyword bot interface.",
+	"main": "index.js",
+	"scripts": {
+		"test": "nodeunit test/"
+	},
+	"author": "sycLin",
+	"license": "BSD-3-Clause",
+	"dependencies": {
+		"nodeunit": "^0.11.0"
+	}
+}
