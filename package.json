@@ -4,11 +4,16 @@
 	"description": "A keyword bot interface.",
 	"main": "index.js",
 	"scripts": {
-		"test": "nodeunit test/"
+		"test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/nodeunit/bin/nodeunit -- test/",
+		"coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
 	},
 	"author": "sycLin",
 	"license": "BSD-3-Clause",
 	"dependencies": {
 		"nodeunit": "^0.11.0"
+	},
+	"devDependencies": {
+		"coveralls": "^3.0.0",
+		"istanbul": "^0.4.5"
 	}
 }
